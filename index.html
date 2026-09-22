@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Keanuber Ostaya | Websites, Funnels & Front-End Development</title>
+<meta name="description" content="Keanuber Ostaya — Web Developer, Funnel Builder, and CMS Specialist building websites, landing pages, funnels, and custom front-end experiences.">
+<meta name="author" content="Keanuber Ostaya">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#087f62">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Keanuber Ostaya | Websites, Funnels & Front-End Development">
+<meta property="og:description" content="Websites, landing pages, funnels, and front-end development across WordPress, Webflow, Shopify, GoHighLevel, React, and Angular.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Keanuber Ostaya | Web Developer & Funnel Builder">
+<meta name="twitter:description" content="Websites, funnels, and front-end development by Keanuber Ostaya.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#f7f8fa;
+    --bg-2:#eef2f5;
+    --surface:#ffffff;
+    --surface-2:#f1f5f3;
+    --text:#17202a;
+    --text-soft:#53606d;
+    --text-faint:#788592;
+    --ink:#0f1720;
+    --teal:#087f62;
+    --teal-2:#10a37f;
+    --teal-pale:#e5f6f0;
+    --violet:#6557c9;
+    --border:#dce3e8;
+    --border-strong:#bfcbd3;
+    --shadow:0 18px 50px rgba(20,35,45,.09);
+    --shadow-sm:0 8px 24px rgba(20,35,45,.07);
+    --display:'Space Grotesk',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+    --body:'Inter',sans-serif;
+    --max:1120px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:82px}
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 5% 0%, rgba(16,163,127,.08), transparent 28rem),
+      radial-gradient(circle at 95% 18%, rgba(101,87,201,.06), transparent 30rem),
+      var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--teal);color:#fff}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 30px;position:relative;z-index:1}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:30;
+    background:rgba(247,248,250,.92);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--border);
+  }
+  .header-inner{max-width:var(--max);margin:auto;padding:15px 30px;display:flex;justify-content:space-between;align-items:center}
+  .mark{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.02em;color:var(--ink)}
+  .mark span{color:var(--teal)}
+  nav{display:flex;gap:24px;align-items:center;font-size:13px}
+  nav a:not(.nav-cta){text-decoration:none;color:var(--text-soft);font-weight:500}
+  nav a:not(.nav-cta):hover{color:var(--teal)}
+  .nav-cta{
+    font-family:var(--mono);font-size:12px;text-decoration:none;color:#fff;
+    padding:9px 15px;border-radius:8px;background:var(--ink);
+    box-shadow:var(--shadow-sm);transition:.18s ease
+  }
+  .nav-cta:hover{transform:translateY(-1px);background:var(--teal)}
+
+  /* Hero */
+  .hero{padding:82px 0 70px;display:grid;grid-template-columns:1.15fr .85fr;gap:62px;align-items:center}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--mono);font-size:12px;color:var(--teal);
+    background:var(--teal-pale);border:1px solid #c7ebe0;border-radius:999px;
+    padding:7px 11px;margin:0 0 20px;font-weight:500
+  }
+  .hero h1{
+    font-family:var(--display);font-weight:700;font-size:clamp(38px,5.1vw,64px);
+    line-height:1.04;letter-spacing:-.045em;margin:0 0 22px;color:var(--ink)
+  }
+  .hero h1 .gradient-text{color:var(--teal)}
+  .hero p.lede{font-size:17px;color:var(--text-soft);max-width:62ch;margin:0 0 30px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+  .btn{
+    font-family:var(--mono);font-size:12px;font-weight:500;text-decoration:none;
+    padding:13px 18px;border-radius:8px;display:inline-block;transition:.18s ease
+  }
+  .btn-primary{color:#fff;background:var(--teal);box-shadow:0 10px 24px rgba(8,127,98,.18)}
+  .btn-primary:hover{transform:translateY(-2px);background:#066e55}
+  .btn-outline{color:var(--ink);background:#fff;border:1px solid var(--border-strong)}
+  .btn-outline:hover{transform:translateY(-2px);border-color:var(--teal);color:var(--teal)}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:22px;font-family:var(--mono);font-size:11px;color:var(--text-faint)}
+  .hero-meta strong{color:var(--text);display:block;font-family:var(--body);font-size:12px;margin-bottom:3px;font-weight:700}
+
+  /* Code card */
+  .code-card{
+    border-radius:16px;padding:0;overflow:hidden;background:#101820;
+    box-shadow:0 24px 60px rgba(15,23,32,.18);border:1px solid #24313b
+  }
+  .code-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid #283640}
+  .code-dot{width:9px;height:9px;border-radius:50%;background:#64717b}
+  .code-title{margin-left:8px;font-family:var(--mono);font-size:11px;color:#aeb9c1}
+  .code-body{padding:22px 20px;font-family:var(--mono);font-size:12px;line-height:1.85;color:#c2cbd1;white-space:pre;overflow-x:auto}
+  .code-body .k{color:#ef82ad}.code-body .s{color:#68d5b4}.code-body .p{color:#8c9aa4}.code-body .v{color:#ffd479}
+
+  /* Sections */
+  .section-head{padding:64px 0 22px}
+  .section-head h2{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.025em;margin:0 0 7px;color:var(--ink)}
+  .section-head p{color:var(--text-soft);font-size:15px;margin:0;max-width:68ch}
+  .eyebrow{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);font-weight:600;margin-bottom:8px}
+
+  /* Proof strip */
+  .proof-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:8px 0 18px;box-shadow:var(--shadow-sm)}
+  .proof{background:#fff;padding:22px}
+  .proof strong{display:block;font-family:var(--display);font-size:25px;line-height:1.1;color:var(--ink);margin-bottom:5px}
+  .proof span{font-size:12px;color:var(--text-soft)}
+
+  /* Services */
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:12px}
+  .service{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:var(--shadow-sm)}
+  .service h3{font-family:var(--display);font-size:16px;margin:0 0 8px;color:var(--ink)}
+  .service p{font-size:13.5px;color:var(--text-soft);margin:0}
+  .service-num{font-family:var(--mono);font-size:11px;color:var(--teal);margin-bottom:13px}
+
+  /* Projects */
+  .filters{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+  .filter-btn{
+    font-family:var(--mono);font-size:11px;background:#fff;border:1px solid var(--border);
+    color:var(--text-soft);padding:8px 13px;border-radius:999px;cursor:pointer;transition:.18s
+  }
+  .filter-btn:hover{border-color:var(--border-strong);color:var(--text)}
+  .filter-btn.active{color:#fff;background:var(--teal);border-color:var(--teal)}
+  .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:48px}
+  .card{
+    border-radius:14px;padding:21px;background:#fff;border:1px solid var(--border);
+    display:flex;flex-direction:column;gap:9px;text-decoration:none;color:var(--text);
+    position:relative;overflow:hidden;min-height:142px;transition:.2s ease;box-shadow:var(--shadow-sm)
+  }
+  .card:hover{transform:translateY(-4px);border-color:#b7dcd2;box-shadow:var(--shadow)}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .card-name{font-family:var(--display);font-weight:700;font-size:15.5px;word-break:break-word;color:var(--ink)}
+  .badge{font-family:var(--mono);font-size:9.5px;color:var(--teal);background:var(--teal-pale);border:1px solid #c7ebe0;padding:3px 8px;border-radius:999px;white-space:nowrap}
+  .badge.funnel{color:var(--violet);background:#efedff;border-color:#dcd8ff}
+  .badge.freelance{color:#a02d65;background:#fcebf3;border-color:#f4ccdf}
+  .card-note{font-size:13px;color:var(--text-soft);margin:0}
+  .card-visit{font-family:var(--mono);font-size:11px;color:var(--text-faint);margin-top:auto}
+  .card:hover .card-visit{color:var(--teal)}
+  .card.hidden{display:none}
+
+  /* Experience / Education */
+  .job,.edu{
+    background:#fff;border:1px solid var(--border);border-radius:14px;padding:21px 23px;margin-bottom:12px;
+    display:grid;grid-template-columns:190px 1fr;gap:22px;box-shadow:var(--shadow-sm)
+  }
+  .job-when,.edu-when{font-family:var(--mono);font-size:11px;color:var(--text-faint);padding-top:2px}
+  .job-when strong,.edu-when strong{display:block;font-family:var(--display);font-size:15px;color:var(--ink);font-weight:700;margin-bottom:3px}
+  .job-role,.edu-role{font-weight:700;margin:0 0 5px;font-size:15.5px;color:var(--ink)}
+  .job-desc{margin:0;color:var(--text-soft);font-size:13.5px;max-width:75ch}
+  .edu ul{margin:0;padding-left:18px;color:var(--text-soft);font-size:13.5px}
+  .edu li{margin-bottom:4px}
+
+  /* Skills */
+  .stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+  .stack-cell{background:#fff;border:1px solid var(--border);border-radius:14px;padding:19px;box-shadow:var(--shadow-sm)}
+  .stack-cell h3{font-family:var(--mono);font-size:10.5px;color:var(--teal);margin:0 0 11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+  .pill-row{display:flex;flex-wrap:wrap;gap:6px}
+  .pill{font-size:11.5px;color:var(--text);background:var(--surface-2);border:1px solid #e0e7eb;padding:5px 9px;border-radius:999px}
+
+  /* Testimonials */
+  .testimonial-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:18px}
+  .testimonial-card{border-radius:15px;padding:25px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:14px}
+  .stars{display:flex;gap:3px}.stars svg{width:16px;height:16px}
+  .testimonial-quote{font-size:18px;line-height:1.55;color:var(--ink);margin:0;font-weight:500}
+  .testimonial-source{font-family:var(--mono);font-size:10.5px;color:var(--text-faint)}
+  .testimonial-who{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .testimonial-name{font-family:var(--display);font-weight:700;font-size:14px;color:var(--ink)}
+  .testimonial-role{font-size:12px;color:var(--text-soft);display:block}
+  .testimonial-more{font-family:var(--mono);font-size:11px;color:var(--teal);cursor:pointer}
+  .testimonial-more summary{list-style:none}.testimonial-more summary::-webkit-details-marker{display:none}
+  .testimonial-more[open] summary{margin-bottom:8px}
+  .testimonial-more-body{font-size:13px;color:var(--text-soft);line-height:1.7}
+  .testimonial-more-body p{margin:0 0 10px}
+
+  /* Contact */
+  .contact{padding:58px 0 82px}
+  .contact-panel{border-radius:20px;padding:45px;background:var(--ink);color:#fff;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(15,23,32,.18)}
+  .contact-panel:after{content:"";position:absolute;width:300px;height:300px;background:var(--teal);filter:blur(90px);opacity:.25;top:-130px;right:-80px;border-radius:50%}
+  .contact h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-.03em;margin:0 0 14px;max-width:18ch;position:relative}
+  .contact p.lede2{color:#b8c2c9;font-size:15px;max-width:62ch;margin:0 0 28px;position:relative}
+  .contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;position:relative}
+  .contact-cell{border-radius:10px;padding:16px;text-decoration:none;color:#fff;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);transition:.18s}
+  .contact-cell:hover{transform:translateY(-2px);border-color:rgba(16,163,127,.7)}
+  .contact-cell span{display:block;font-family:var(--mono);font-size:10px;color:#8e9aa4;margin-bottom:5px;text-transform:uppercase}
+  .contact-cell strong{font-family:var(--display);font-size:13.5px;font-weight:600;word-break:break-word}
+
+  footer{border-top:1px solid var(--border);padding:20px 0 34px;font-family:var(--mono);font-size:10.5px;color:var(--text-faint);display:flex;justify-content:space-between}
+
+  :focus-visible{outline:3px solid rgba(16,163,127,.35);outline-offset:3px}
+  .reveal{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;gap:34px}
+    .stack-grid{grid-template-columns:1fr 1fr}
+    .proof-strip{grid-template-columns:1fr 1fr}
+    .service-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:720px){
+    .wrap{padding:0 18px}.header-inner{padding:13px 18px}
+    .hero{padding:55px 0 45px}.hero h1{font-size:40px}
+    .project-grid,.testimonial-grid{grid-template-columns:1fr}
+    .job,.edu{grid-template-columns:1fr;gap:7px}
+    .contact-grid{grid-template-columns:1fr}.contact-panel{padding:30px 22px}
+    .stack-grid,.proof-strip{grid-template-columns:1fr}
+    nav a:not(.nav-cta){display:none}
+  }
+</style>
+
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="mark">Keanuber <span>Ostaya</span></div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div>
+      <p class="hero-tag">WEB DEVELOPER · FUNNEL BUILDER · CMS SPECIALIST</p>
+      <h1>Websites and funnels built to <span class="gradient-text">look sharp, work smoothly, and move people forward.</span></h1>
+      <p class="lede">I build and improve client websites, landing pages, and marketing funnels across WordPress, Webflow, Shopify, and GoHighLevel—plus custom front-end work in React and Angular when a template is not enough. 25+ live sites and funnels are featured below.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:ostayakeanuber@gmail.com">Email me</a>
+        <a class="btn btn-outline" href="#work">See the work</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>Based</strong>Cebu City, Philippines</div>
+        <div><strong>Current role</strong>AI Website Developer & GHL Funnel Builder</div>
+        <div><strong>Available for</strong>Freelance & contract work</div>
+      </div>
+    </div>
+
+    <div class="code-card glass">
+      <div class="code-bar">
+        <span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span>
+        <span class="code-title">developer.js</span>
+      </div>
+      <div class="code-body"><span class="k">const</span> developer <span class="p">=</span> {
+  <span class="p">name:</span> <span class="s">"Keanuber Ostaya"</span>,
+  <span class="p">role:</span> <span class="s">"Front-End & Funnel Builder"</span>,
+  <span class="p">stack:</span> [<span class="s">"React"</span>, <span class="s">"Angular"</span>, <span class="s">"Laravel"</span>],
+  <span class="p">builds:</span> [<span class="s">"WordPress"</span>, <span class="s">"Webflow"</span>, <span class="s">"Shopify"</span>, <span class="s">"GoHighLevel"</span>],
+  <span class="p">shipped:</span> <span class="v">25</span>,
+  <span class="p">available:</span> <span class="k">true</span>
+};</div>
+    </div>
+  </section>
+
+  <section class="reveal" aria-label="Quick proof">
+    <div class="proof-strip">
+      <div class="proof"><strong>25+</strong><span>live websites & funnels shipped</span></div>
+      <div class="proof"><strong>6 yrs</strong><span>across client services & development</span></div>
+      <div class="proof"><strong>5.0</strong><span>Upwork rating shown in client feedback</span></div>
+      <div class="proof"><strong>7+</strong><span>core platforms & development technologies</span></div>
+    </div>
+  </section>
+
+  <section class="reveal" aria-label="Services">
+    <div class="section-head">
+      <div class="eyebrow">How I can help</div>
+      <h2>From first click to final launch.</h2>
+      <p>I can step into an existing project, build from the ground up, or handle the front-end work that keeps a live site moving.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service">
+        <div class="service-num">01 / WEBSITE BUILD</div>
+        <h3>Websites that feel polished</h3>
+        <p>WordPress, Webflow, Shopify, React, Angular, HTML, CSS, and JavaScript builds focused on responsive, usable interfaces.</p>
+      </div>
+      <div class="service">
+        <div class="service-num">02 / FUNNEL BUILD</div>
+        <h3>Funnels that guide the journey</h3>
+        <p>GoHighLevel, ClickFunnels, and campaign pages for registrations, webinars, challenges, masterclasses, and enrollments.</p>
+      </div>
+      <div class="service">
+        <div class="service-num">03 / FIX & IMPROVE</div>
+        <h3>Reliable front-end support</h3>
+        <p>Front-end fixes, product additions, migrations, and page improvements across WordPress, Shopify, Webflow, and other platforms.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="reveal">
+    <div class="section-head">
+      <div class="eyebrow">Selected work</div>
+      <h2>Real projects. Live links. No mockups.</h2>
+      <p>Explore websites, funnels, and freelance builds I have worked on. Each card links directly to the live project.</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All (25)</button>
+      <button class="filter-btn" data-filter="website">Websites (11)</button>
+      <button class="filter-btn" data-filter="funnel">Funnels (9)</button>
+      <button class="filter-btn" data-filter="freelance">Freelance & fixes (5)</button>
+    </div>
+
+    <div class="project-grid" id="project-grid">
+
+      <a class="card glass" data-cat="website" href="https://idagrowth.com/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">idagrowth.com</span><span class="badge">Website</span></div>
+        <p class="card-note">Agency site build.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="website" href="https://drpattamakloe.com/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">drpattamakloe.com</span><span class="badge">Website</span></div>
+        <p class="card-note">Client site build.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="website" href="https://www.idacareers.com/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">idacareers.com</span><span class="badge">Website</span></div>
+        <p class="card-note">Careers site build.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="website" href="https://ncm.idagrowth.com/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">ncm.idagrowth.com</span><span class="badge">Website</span></div>
+        <p class="card-note">Subdomain site build.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="website" href="https://veritasclassical.org/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">veritasclassical.org</span><span class="badge">Website</span></div>
+        <p class="card-note">Organization site build.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="website" href="https://dra.idagrowth.com/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">dra.idagrowth.com</span><span class="badge">Website</span></div>
+        <p class="card-note">Subdomain site build.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="website" href="https://caribordley.com/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">caribordley.com</span><span class="badge">Website</span></div>
+        <p class="card-note">Personal brand site build.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="website" href="https://decaloliving.com/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">decaloliving.com</span><span class="badge">Website</span></div>
+        <p class="card-note">Client site build.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="website" href="https://wilderfec.org/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">wilderfec.org</span><span class="badge">Website</span></div>
+        <p class="card-note">Organization site build.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="website" href="https://purposepracticecoaching.com/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">purposepracticecoaching.com</span><span class="badge">Website</span></div>
+        <p class="card-note">Coaching site build.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="website" href="https://fmi.idagrowth.com/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">fmi.idagrowth.com</span><span class="badge">Website</span></div>
+        <p class="card-note">Subdomain site build.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+
+      <a class="card glass" data-cat="funnel" href="https://profitfrompain.com/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">profitfrompain.com</span><span class="badge funnel">Funnel</span></div>
+        <p class="card-note">Lead / registration funnel build.</p>
+        <span class="card-visit">Visit funnel</span>
+      </a>
+      <a class="card glass" data-cat="funnel" href="https://thejoshualeadershipproject.com/registration" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">thejoshualeadershipproject.com</span><span class="badge funnel">Funnel</span></div>
+        <p class="card-note">Registration funnel build.</p>
+        <span class="card-visit">Visit funnel</span>
+      </a>
+      <a class="card glass" data-cat="funnel" href="https://go.drpattamakloe.com/register" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">go.drpattamakloe.com</span><span class="badge funnel">Funnel</span></div>
+        <p class="card-note">Registration funnel build.</p>
+        <span class="card-visit">Visit funnel</span>
+      </a>
+      <a class="card glass" data-cat="funnel" href="https://webinar.catemurphy.com/register" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">webinar.catemurphy.com</span><span class="badge funnel">Funnel</span></div>
+        <p class="card-note">Webinar registration funnel.</p>
+        <span class="card-visit">Visit funnel</span>
+      </a>
+      <a class="card glass" data-cat="funnel" href="https://artistbusinesschallenge.com/register" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">artistbusinesschallenge.com</span><span class="badge funnel">Funnel</span></div>
+        <p class="card-note">Challenge registration funnel.</p>
+        <span class="card-visit">Visit funnel</span>
+      </a>
+      <a class="card glass" data-cat="funnel" href="https://iammasterclass.com/register" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">iammasterclass.com</span><span class="badge funnel">Funnel</span></div>
+        <p class="card-note">Masterclass registration funnel.</p>
+        <span class="card-visit">Visit funnel</span>
+      </a>
+      <a class="card glass" data-cat="funnel" href="https://serviceofspeaking.com/sos-mastery-enrollment" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">serviceofspeaking.com</span><span class="badge funnel">Funnel</span></div>
+        <p class="card-note">Enrollment funnel build.</p>
+        <span class="card-visit">Visit funnel</span>
+      </a>
+      <a class="card glass" data-cat="funnel" href="https://7daypsalms.com/homework" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">7daypsalms.com</span><span class="badge funnel">Funnel</span></div>
+        <p class="card-note">Program funnel build.</p>
+        <span class="card-visit">Visit funnel</span>
+      </a>
+      <a class="card glass" data-cat="funnel" href="https://digitaldrewsplaybook.com/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">digitaldrewsplaybook.com</span><span class="badge funnel">Funnel</span></div>
+        <p class="card-note">Offer funnel build.</p>
+        <span class="card-visit">Visit funnel</span>
+      </a>
+
+      <a class="card glass" data-cat="freelance" href="https://jenoza.com" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">jenoza.com</span><span class="badge freelance">Freelance</span></div>
+        <p class="card-note">Built with Angular v18, VS Code, deployed via cPanel.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="freelance" href="https://speakeasymastermind.com" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">speakeasymastermind.com</span><span class="badge freelance">Freelance</span></div>
+        <p class="card-note">Front-end fixes on WordPress.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="freelance" href="https://www.briantracy.com" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">briantracy.com</span><span class="badge freelance">Freelance</span></div>
+        <p class="card-note">Front-end fixes on ClickFunnels, later migrated to Go High Level.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="freelance" href="https://trueswing.com/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">trueswing.com</span><span class="badge freelance">Freelance</span></div>
+        <p class="card-note">Front-end fixes and product additions on Shopify.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+      <a class="card glass" data-cat="freelance" href="https://www.drmamina.com" target="_blank" rel="noopener noreferrer">
+        <div class="card-top"><span class="card-name">drmamina.com</span><span class="badge freelance">Freelance</span></div>
+        <p class="card-note">Front-end fixes with HTML and JavaScript on Webflow.</p>
+        <span class="card-visit">Visit site</span>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="experience" class="reveal">
+    <div class="section-head">
+      <div class="eyebrow">Experience</div>
+      <h2>A developer who understands the work around the website.</h2>
+      <p>My background combines hands-on development with client service, lead research, CRM work, and marketing operations.</p>
+    </div>
+
+    <div class="job glass">
+      <div class="job-when"><strong>2026</strong>IDA Growth</div>
+      <div>
+        <p class="job-role">AI Website Developer & Go High Level Funnel Builder</p>
+        <p class="job-desc">Manage and build websites on WordPress, Webflow, and Shopify, implementing JavaScript, HTML, and CSS, optimizing for SEO, and creating high-converting funnels in GoHighLevel.</p>
+      </div>
+    </div>
+    <div class="job glass">
+      <div class="job-when"><strong>2025</strong>Rooche Digital</div>
+      <div>
+        <p class="job-role">Web Developer</p>
+        <p class="job-desc">Developed and implemented client websites using HTML, CSS, JavaScript, and React.js to create responsive, optimized, user-friendly interfaces.</p>
+      </div>
+    </div>
+    <div class="job glass">
+      <div class="job-when"><strong>2024 – 2025</strong>Userware</div>
+      <div>
+        <p class="job-role">Business Development Representative</p>
+        <p class="job-desc">Conducted market research, prospected leads, and managed the CRM to qualify leads, prepare reports, and maintain client relationships.</p>
+      </div>
+    </div>
+    <div class="job glass">
+      <div class="job-when"><strong>2022 – 2024</strong>eLink System & Concepts Corp</div>
+      <div>
+        <p class="job-role">Lead Management Researcher</p>
+        <p class="job-desc">Managed and updated CRM lead records while researching and identifying potential clients, specifically book authors, for the sales team.</p>
+      </div>
+    </div>
+    <div class="job glass">
+      <div class="job-when"><strong>2021 – 2022</strong>Wipro Philippines</div>
+      <div>
+        <p class="job-role">Production Specialist</p>
+        <p class="job-desc">Assisted healthcare providers with health insurance matters and authorization letters.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="reveal">
+    <div class="section-head">
+      <div class="eyebrow">Technical toolkit</div>
+      <h2>Flexible enough for the platform you already use.</h2>
+      <p>From visual CMS platforms to custom front-end development, these are the tools and technologies represented in my work.</p>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-cell glass">
+        <h3>Programming / frameworks</h3>
+        <div class="pill-row">
+          <span class="pill">React.js</span><span class="pill">Next.js</span><span class="pill">Angular</span><span class="pill">Laravel</span><span class="pill">PHP</span><span class="pill">JavaScript</span><span class="pill">HTML</span><span class="pill">CSS</span>
+        </div>
+      </div>
+      <div class="stack-cell glass">
+        <h3>CMS & funnel builders</h3>
+        <div class="pill-row">
+          <span class="pill">WordPress</span><span class="pill">Shopify</span><span class="pill">ClickFunnels</span><span class="pill">Webflow</span><span class="pill">Go High Level</span>
+        </div>
+      </div>
+      <div class="stack-cell glass">
+        <h3>Tools & version control</h3>
+        <div class="pill-row">
+          <span class="pill">VS Code</span><span class="pill">GitHub</span><span class="pill">Docker</span><span class="pill">Cmd.exe</span><span class="pill">Remote Desktop</span>
+        </div>
+      </div>
+      <div class="stack-cell glass">
+        <h3>CRM & business tools</h3>
+        <div class="pill-row">
+          <span class="pill">Apollo</span><span class="pill">HubSpot</span><span class="pill">Zoho CRM</span><span class="pill">Trello</span><span class="pill">Asana</span><span class="pill">Microsoft 365</span><span class="pill">Google Workspace</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="edu glass">
+      <div class="edu-when"><strong>2019 – 2024</strong>Cebu Eastern College</div>
+      <div>
+        <p class="edu-role">Bachelor of Science in Information Technology</p>
+        <ul>
+          <li>Capstone: "SSG Voting System for Cebu Eastern College"</li>
+          <li>Award: Best Capstone Programmer</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="reveal">
+    <div class="section-head">
+      <div class="eyebrow">Client proof</div>
+      <h2>Technical skill is only part of the job.</h2>
+      <p>Here is direct feedback highlighting responsiveness, attention to detail, reliability, and the quality of delivered work.</p>
+    </div>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="#ffd479"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#ffd479"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#ffd479"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#ffd479"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#ffd479"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+        </div>
+        <p class="testimonial-quote">"Keanuber really is dedicated to his tasks and is willing to put in the time and effort for the project to succeed. We ran out of missions for him, but if we..."</p>
+        <div class="testimonial-who">
+          <div>
+            <span class="testimonial-name">Upwork Client</span>
+            <span class="testimonial-role">Completed project, 5.0 rating</span>
+          </div>
+          <span class="testimonial-source">Upwork</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="#ffd479"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#ffd479"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#ffd479"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#ffd479"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#ffd479"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+        </div>
+        <p class="testimonial-quote">"Keanuber consistently demonstrated excellent technical skills, attention to detail, and reliability. He was highly responsive to requests and feedback and consistently delivered quality work within tight timelines."</p>
+        <div class="testimonial-who">
+          <div>
+            <span class="testimonial-name">Jesenia Cintron</span>
+            <span class="testimonial-role">Executive Assistant, IDA Growth</span>
+          </div>
+          <span class="testimonial-source">Signed reference letter</span>
+        </div>
+        <details class="testimonial-more">
+          <summary>Read the full letter</summary>
+          <div class="testimonial-more-body">
+            <p>"I am pleased to recommend Keanuber, who worked with us at IDA Growth as a Web & Funnel Developer. During his time with our team, Keanuber primarily built and implemented multiple marketing funnels for our clients' events. His responsibilities included developing landing pages and other funnel pages that supported different stages of our clients' campaigns.</p>
+            <p>He was also collaborative, professional, and easy to work with. When revisions or last-minute adjustments were needed, we could rely on him to respond quickly and get the work completed efficiently.</p>
+            <p>His contributions to IDA Growth were greatly appreciated, and I would confidently recommend Keanuber to any organization looking for a skilled, responsive, and dependable web developer."</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="contact reveal">
+    <div class="contact-panel glass">
+      <h2>Have a website or funnel project in mind?</h2>
+      <p class="lede2">Tell me what you are building, fixing, or improving. I take on freelance and contract work across WordPress, Webflow, Shopify, and GoHighLevel, plus custom front-end builds in React and Angular.</p>
+      <div class="contact-grid">
+        <a class="contact-cell" href="mailto:ostayakeanuber@gmail.com"><span>Email</span><strong>ostayakeanuber@gmail.com</strong></a>
+        <a class="contact-cell" href="tel:+639684189338"><span>Phone</span><strong>+63 968 418 9338</strong></a>
+        <a class="contact-cell" href="https://www.linkedin.com/in/keanuber-ostaya-a35b30320/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>linkedin.com/in/keanuber-ostaya</strong></a>
+        <div class="contact-cell"><span>Location</span><strong>Cebu City, Philippines</strong></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%;">
+    <span>© 2026 Keanuber Ostaya</span>
+    <span>Built with HTML, CSS & JavaScript</span>
+  </div>
+</footer>
+
+<script>
+  var buttons = document.querySelectorAll('.filter-btn');
+  var cards = document.querySelectorAll('.card');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      buttons.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.getAttribute('data-filter');
+      cards.forEach(function (c) {
+        c.classList.toggle('hidden', f !== 'all' && c.getAttribute('data-cat') !== f);
+      });
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+</script>
+
+</body>
+</html>
